@@ -56,7 +56,7 @@ num_student = number_of_students()
 for _ in range(num_student):
     student_info = info_students()
     students.append({"info": student_info, "marks": {}})
-
+    
 num_course = number_of_courses()
 for _ in range(num_course):
     course_info = info_courses()
