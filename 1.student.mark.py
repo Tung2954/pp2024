@@ -28,9 +28,9 @@ def info_students():
             break
         else:
             print("Already have ID. Enter another one.")
-        student_name = input("Enter student name: ")
-        student_dob = input("Enter student dob: ")
-        return {"id": student_id, "name": student_name, "dob": student_dob, "courses": []}
+    student_name = input("Enter student name: ")
+    student_dob = input("Enter student dob: ")
+    return {"id": student_id, "name": student_name, "dob": student_dob, "courses": []}
 
 def number_of_courses():
     return int(input("Enter the number of course(s): "))
@@ -45,8 +45,8 @@ def info_courses():
             break
         else:
             print("Already have ID. Enter another one.")
-        course_name = input("Enter course name: ")
-        return {"id": course_id, "name": course_name}
+    course_name = input("Enter course name: ")
+    return {"id": course_id, "name": course_name}
 
 def input_marks(course, student, students, courses):
     if not check_student_number(students) and not check_course_number(courses):
