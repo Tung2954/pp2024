@@ -17,13 +17,8 @@ class Student:
         total_mark = 0
         
         for course in self.courses:
-            try:
-                credit_value = course["credits"]
-                total_credits += credit_value
-                total_mark += course["marks"]
-            except ValueError:
-                print(f"Error: Invalid credits value for course {course['course_id']} - {course['credits']}")
-                continue
+            total_credits += (course["credits"])
+            total_mark += course["marks"]
 
         if total_credits == 0:
             return 0
@@ -82,10 +77,10 @@ def list_courses(courses):
 
 def show_student_marks(student, selected_course):
     if check_student_number(students) and check_course_number(courses):
-        print(f"Marks for {selected_course.name} - Student ID: {student.id} - Name: {student.name}")
-        for course_mark in student.courses:
-            if course_mark['course_id'] == selected_course.id:
-                print(f"Course ID: {course_mark['course_id']} - Marks: {course_mark['marks']} -     Credits: {course_mark['credits']}")
+        print(f"Mark for {selected_course.name} - Course ID: {selected_course.id} - Credits: {selected_course.credits}")
+        for _ in student.courses:
+            if _['course_id'] == selected_course.id:
+                print(f"Student ID: {student.id} - Name: {student.name} - Marks: {_['marks']}")
                 return
         print(f"No marks found for {selected_course.name}")
 
@@ -132,6 +127,7 @@ def select_choice():
                 if selected_course:
                     for student in students:
                         marks = float(input(f"Enter the mark for {selected_course.name} of the student {student.name}: "))
+                        credits = select_course.credits
                         student.input_marks(selected_course.id, marks, credits)
 
         elif choice == 4:
