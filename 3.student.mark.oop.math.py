@@ -64,7 +64,7 @@ def select_course(courses):
     for course in courses:
         if course.id == course_id:
             return course
-
+    
 def list_students(students):
         print("List of students: ")
         for student in students:
@@ -127,7 +127,7 @@ def select_choice():
                 if selected_course:
                     for student in students:
                         marks = float(input(f"Enter the mark for {selected_course.name} of the student {student.name}: "))
-                        credits = select_course.credits
+                        credits = selected_course.credits
                         student.input_marks(selected_course.id, marks, credits)
 
         elif choice == 4:
@@ -163,4 +163,5 @@ def select_choice():
         else:
             print("Not legal step!!!")
 
-select_choice()
+if __name__ == "__main__":
+    select_choice()
